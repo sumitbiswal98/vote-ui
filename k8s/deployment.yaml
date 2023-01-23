@@ -15,7 +15,7 @@ spec:
         app: vote-ui
     spec:
       containers:
-        - image: quay.io/openshift-pipeline/vote-ui:latest
+        - image: quay.io/sumitbiswal/sumit-custom-httpd:latest
           imagePullPolicy: Always
           name: vote-ui
           ports:
