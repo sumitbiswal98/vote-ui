@@ -15,7 +15,7 @@ spec:
         app: vote-ui
     spec:
       containers:
-        - image: quay.io/sumitbiswal/python:latest
+        - image: quay.io/sumitbiswal/vote-ui:latest
           imagePullPolicy: Always
           name: vote-ui
           ports:
