@@ -1,15 +1,19 @@
-apiVersion: v1
+apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
+  name: vote-ui
   labels:
     app: vote-ui
-  name: vote-ui
 spec:
-  type: NodePort
-  ports:
-    - name: 8080-tcp
-      port: 8080
-      targetPort: 8080
-      protocol: TCP
-  selector:
-    app: vote-ui
+  template:
+    metadata:
+      labels:
+        app: vote-ui
+    spec:
+      containers:
+        - image: quay.io/sumitbiswal/sumit-custom-httpd:latest
+          name: vote-ui
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
