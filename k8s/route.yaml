@@ -1,13 +1,10 @@
-apiVersion: route.openshift.io/v1
+apiVersion: serving.knative.dev/v1
 kind: Route
 metadata:
+  name: vote-ui
   labels:
     app: vote-ui
-  name: vote-ui
 spec:
-  port:
-    targetPort: 8080-tcp
-  to:
-    kind: Service
-    name: vote-ui
-    weight: 100
+  traffic:
+    - revisionName: vote-ui
+      percent: 100
