@@ -11,9 +11,15 @@ spec:
         app: vote-ui
     spec:
       containers:
-        - image: quay.io/sumitbiswal/sumit-custom-httpd:latest
+        - image: quay.io/sumitbiswal/vote-ui:latest
           name: vote-ui
           ports:
-            - name: http
-              containerPort: 8080
+            - containerPort: 8080
               protocol: TCP
+            - containerPort: 9090
+              protocol: TCP
+          env:
+            - name: VOTING_API_SERVICE_HOST
+              value: vote-api
+            - name: VOTING_API_SERVICE_PORT
+              value: "9000"
