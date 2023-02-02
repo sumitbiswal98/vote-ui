@@ -5,6 +5,8 @@ metadata:
   labels:
     app: vote-ui
 spec:
+  port:
+    targetPort: 8080-tcp
   traffic:
     - revisionName: vote-ui
       percent: 100
