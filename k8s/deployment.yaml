@@ -15,7 +15,7 @@ spec:
         app: vote-ui
     spec:
       containers:
-        - image: quay.io/adhis/new-kn:latest
+        - image: quay.io/adhis/argocd-001:latest
           imagePullPolicy: Always
           name: vote-ui
           ports:
