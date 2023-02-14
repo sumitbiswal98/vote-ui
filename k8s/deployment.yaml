@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - image: quay.io/sumitbiswal/argocd-python:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           name: vote-ui
           ports:
             - containerPort: 8080
